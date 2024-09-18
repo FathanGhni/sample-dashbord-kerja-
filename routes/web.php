@@ -28,6 +28,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Book
     Route::delete('books/destroy', 'BookController@massDestroy')->name('books.massDestroy');
     Route::resource('books', 'BookController');
+    // Book
+    Route::delete('fathans/destroy', 'FathanController@massDestroy')->name('fathans.massDestroy');
+    Route::post('fathans/media', 'FathanController@storeMedia')->name('fathans.storeMedia');
+    Route::post('fathans/ckmedia', 'FathanController@storeCKEditorImages')->name('fathans.storeCKEditorImages');
+    Route::resource('fathans', 'FathanController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password

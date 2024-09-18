@@ -76,6 +76,16 @@
                             </a>
                         </li>
                     @endcan
+                    @can('fathan_access')
+                    <li class="c-sidebar-nav-item">
+                            <a href="{{ route("admin.fathans.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/fathans") || request()->is("admin/fathans/*") ? "c-active" : "" }}">
+                                <i class="fa-fw fas fa-book c-sidebar-nav-icon">
+
+                                </i>
+                                {{ trans('cruds.fathan.title') }}
+                            </a>
+                        </li>
+                    @endcan
                 </ul>
             </li>
         @endcan
